@@ -35,6 +35,10 @@
 	color: #fefefe;
 }
 
+.d3-context-menu ul li i {
+	padding-right: 5px;
+}
+
 /*
 	Header
 */

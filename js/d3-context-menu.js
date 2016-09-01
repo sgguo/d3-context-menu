@@ -70,7 +70,18 @@
 						if (!d.title) {
 							console.error('No title attribute set. Check the spelling of your options.');
 						}
-						return (typeof d.title === 'string') ? d.title : d.title(data);
+
+						var innerHtml = '';
+
+						if (d.icon) {// only fontawesome svg font icon support here.
+							innerHtml += '<i class="' + d.icon + '" aria-hidden="true"></i>';
+						}
+
+						var title = (typeof d.title === 'string') ? d.title : d.title(data);
+
+						innerHtml += '<span>' + title + '</span>';
+
+						return innerHtml;
 					})
 					.on('click', function(d, i) {
 						if (d.disabled) return; // do nothing if disabled
